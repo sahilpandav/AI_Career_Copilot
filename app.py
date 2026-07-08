@@ -114,7 +114,7 @@ def dashboard():
             report = models.Report(
                 user_id = user.id,
                 resume_text = resume_text,
-                results = json.dumps(result)
+                result = json.dumps(result)
             )
 
             db.add(report)
