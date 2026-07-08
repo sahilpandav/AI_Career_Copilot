@@ -71,6 +71,8 @@ def dashboard():
         return redirect("/login")
     
     result = None
+    resume_text = ""
+    user_goal = ""
 
     if request.method == "POST":
         user_goal = request.form.get("role")
@@ -112,7 +114,7 @@ def dashboard():
             report = models.Report(
                 user_id = user.id,
                 resume_text = resume_text,
-                result = json.dumps(result)
+                results = json.dumps(result)
             )
 
             db.add(report)
